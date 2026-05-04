@@ -43,6 +43,26 @@
   .posters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1em; }
   .posters img { width: 48%; border: 1px solid #000; }
   footer { margin-top: 2em; font-size: 0.85em; text-align: center; }
+  .signup { margin: 1em 0; }
+  .signup form { display: flex; gap: 0.5em; flex-wrap: wrap; }
+  .signup input[type="email"] {
+    flex: 1 1 200px;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 0.6em;
+    border: 1px solid #000;
+    background: #fffbe6;
+  }
+  .signup button {
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.4em 1em;
+    border: 1px solid #000;
+    background: #b00;
+    color: #fffbe6;
+    cursor: pointer;
+  }
+  .signup button:hover { background: #000; }
 </style>
 </head>
 <body>
@@ -60,6 +80,25 @@
   <li><a href="bovination/">Foundations of Modern Bovination</a> &mdash; 2026</li>
   <li><a href="humanexperiments/">Human Experiments</a> &mdash; 2025</li>
 </ul>
+
+<hr>
+
+<h2>Mailing List</h2>
+<p><em>get notified when the next edition drops.</em></p>
+<div class="signup">
+  <form id="signup-form"
+        action="https://assets.mailerlite.com/jsonp/2315073/forms/186522554789267082/subscribe"
+        method="post"
+        target="signup-sink"
+        onsubmit="setTimeout(function(){document.getElementById('signup-form').style.display='none';document.getElementById('signup-thanks').style.display='block';},150);">
+    <input type="email" name="fields[email]" placeholder="your@email.com" required autocomplete="email">
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="signup-thanks" style="display:none;"><em>thanks &mdash; you're on the list.</em></p>
+  <iframe name="signup-sink" style="display:none;" aria-hidden="true"></iframe>
+</div>
 
 <hr>
 
