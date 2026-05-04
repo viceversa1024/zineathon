@@ -39,7 +39,11 @@ hr { border: 0; border-top: 1px dashed #000; margin: 1em 0; }
 .book-shell.single-page .right-page { flex: 0 1 50%; cursor: pointer; }
 
 .controls {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 16px;
   margin-top: 1em;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.1em;
@@ -48,7 +52,6 @@ hr { border: 0; border-top: 1px dashed #000; margin: 1em 0; }
   font-family: inherit;
   font-size: 1em;
   padding: 4px 14px;
-  margin: 0 8px;
   min-width: 110px;
   background: #fffbe6;
   border: 1px solid #000;
@@ -56,8 +59,6 @@ hr { border: 0; border-top: 1px dashed #000; margin: 1em 0; }
 }
 .controls button:disabled { color: #999; border-color: #999; cursor: default; }
 .page-info {
-  display: inline-block;
-  margin: 0 8px;
   width: 200px;
   text-align: center;
 }
@@ -77,5 +78,5 @@ hr { border: 0; border-top: 1px dashed #000; margin: 1em 0; }
     cursor: pointer;
   }
   .controls button { min-width: 90px; padding: 4px 8px; }
-  .page-info { width: 130px; font-size: 0.95em; }
+  .page-info { order: -1; flex-basis: 100%; width: auto; font-size: 0.95em; }
 }
