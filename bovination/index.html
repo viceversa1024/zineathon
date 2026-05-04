@@ -5,16 +5,39 @@
 <title>Foundations of Modern Bovination — Zine-a-thon</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../viewer.css">
+<style>
+  #cow-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: none;
+  }
+  body.grazing { background: transparent; }
+  body.grazing #cow-video { display: block; }
+  #graze-toggle {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.95em;
+    padding: 3px 12px;
+    background: #fffbe6;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-top: 0.5em;
+  }
+</style>
 </head>
 <body>
+
+<video id="cow-video" loop muted playsinline preload="none"></video>
 
 <div class="viewer-header">
   <h1>Foundations of Modern Bovination</h1>
   <p class="meta">Zine-a-thon Edition 2 &middot; 2026</p>
   <p><a href="../">&larr; back to zine-a-thon</a></p>
+  <p><button id="graze-toggle" type="button" aria-pressed="false">Graze</button></p>
 </div>
-
-<hr>
 
 <section class="flipbook-section">
   <div class="book-shell" id="book">
@@ -42,6 +65,28 @@
   };
 </script>
 <script src="../viewer.js" defer></script>
+<script>
+  (() => {
+    const video = document.getElementById('cow-video');
+    const btn = document.getElementById('graze-toggle');
+    if (!video || !btn) return;
+    let loaded = false;
+    btn.addEventListener('click', () => {
+      const grazing = document.body.classList.toggle('grazing');
+      btn.textContent = grazing ? 'Suspend' : 'Graze';
+      btn.setAttribute('aria-pressed', String(grazing));
+      if (grazing) {
+        if (!loaded) {
+          video.src = 'cow.mp4';
+          loaded = true;
+        }
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
