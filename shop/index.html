@@ -100,6 +100,16 @@
     font-style: italic;
   }
   footer { margin-top: 2em; font-size: 0.85em; text-align: center; }
+  .copy {
+    font: inherit;
+    color: #0000ee;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .copy:hover { color: #b00; }
 </style>
 </head>
 <body>
@@ -140,7 +150,7 @@
 
 <hr>
 
-<p><em>questions? email <a href="mailto:hi@zineathon.com">hi@zineathon.com</a></em></p>
+<p><em>questions? email <button type="button" class="copy" data-copy="watermah@uci.edu" onclick="(function(b){navigator.clipboard.writeText(b.dataset.copy);var t=b.textContent;b.textContent='copied!';setTimeout(function(){b.textContent=t;},1200);})(this)">watermah@uci.edu</button></em></p>
 
 <footer>
   <p>&copy; 2026 zine-a-thon &middot; <a href="../">home</a></p>
