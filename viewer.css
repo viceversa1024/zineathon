@@ -66,7 +66,16 @@ hr { border: 0; border-top: 1px dashed #000; margin: 1em 0; }
 .viewer-footer a { color: #0000ee; }
 
 @media (max-width: 767px) {
-  .book-shell { padding: 4px; }
-  .book-shell .left-page { display: none; }
-  .book-shell .right-page { flex: 1 1 100%; cursor: pointer; }
+  body { margin: 1em auto; padding: 0 0.5em; }
+  .book-shell,
+  .book-shell.single-page { padding: 4px; }
+  .book-shell .left-page,
+  .book-shell.single-page .left-page { display: none; }
+  .book-shell .right-page,
+  .book-shell.single-page .right-page {
+    flex: 1 1 100%;
+    cursor: pointer;
+  }
+  .controls button { min-width: 90px; padding: 4px 8px; }
+  .page-info { width: 130px; font-size: 0.95em; }
 }
