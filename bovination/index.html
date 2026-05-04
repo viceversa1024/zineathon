@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../viewer.css">
 <style>
-  #cow-video {
+  #graze-video {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -16,7 +16,7 @@
     display: none;
   }
   body.grazing { background: transparent; }
-  body.grazing #cow-video { display: block; }
+  body.grazing #graze-video { display: block; }
   #graze-toggle {
     font-family: "Times New Roman", Times, serif;
     font-size: 0.95em;
@@ -30,7 +30,7 @@
 </head>
 <body>
 
-<video id="cow-video" loop muted playsinline preload="none"></video>
+<video id="graze-video" loop muted playsinline preload="none"></video>
 
 <div class="viewer-header">
   <h1>Foundations of Modern Bovination</h1>
@@ -67,7 +67,7 @@
 <script src="../viewer.js" defer></script>
 <script>
   (() => {
-    const video = document.getElementById('cow-video');
+    const video = document.getElementById('graze-video');
     const btn = document.getElementById('graze-toggle');
     if (!video || !btn) return;
     let loaded = false;
@@ -77,7 +77,7 @@
       btn.setAttribute('aria-pressed', String(grazing));
       if (grazing) {
         if (!loaded) {
-          video.src = 'cow.mp4';
+          video.src = 'graze.mp4';
           loaded = true;
         }
         video.play();
