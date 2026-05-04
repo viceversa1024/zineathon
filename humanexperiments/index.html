@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Human Experiments — Zine-a-thon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../viewer.css">
+</head>
+<body>
+
+<div class="viewer-header">
+  <h1>Human Experiments</h1>
+  <p class="meta">Zine-a-thon Edition 1 &middot; 2025</p>
+  <p><a href="../">&larr; back to zine-a-thon</a></p>
+</div>
+
+<hr>
+
+<section class="flipbook-section">
+  <div class="book-shell" id="book">
+    <div class="page left-page" id="left-page"><img id="zine-left" alt="Human Experiments page"></div>
+    <div class="page right-page" id="right-page"><img id="zine-right" alt="Human Experiments page"></div>
+  </div>
+  <div class="controls">
+    <button id="prev-page" type="button">&laquo; Previous</button>
+    <span class="page-info" id="page-info">Page 1</span>
+    <button id="next-page" type="button">Next &raquo;</button>
+  </div>
+</section>
+
+<p class="viewer-footer">click the left/right side of a page to flip, or use the arrow keys.</p>
+
+<script>
+  window.ZINE = {
+    title: "Human Experiments",
+    year: 2025,
+    pages: [
+      "pages/1.jpg",
+      "pages/white.jpg",
+      "pages/2.jpg", "pages/3.jpg", "pages/4.jpg", "pages/5.jpg",
+      "pages/6.jpg", "pages/7.jpg", "pages/8.jpg", "pages/9.jpg",
+      "pages/10.jpg", "pages/11.jpg", "pages/12.jpg", "pages/13.jpg",
+      "pages/14.jpg", "pages/15.jpg", "pages/16.jpg", "pages/17.jpg",
+      "pages/white.jpg",
+      "pages/18.jpg"
+    ]
+  };
+</script>
+<script src="../viewer.js" defer></script>
+
+</body>
+</html>
