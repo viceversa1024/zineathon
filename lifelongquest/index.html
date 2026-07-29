@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lifelong Quest — Zine-a-thon 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../viewer.css">
+</head>
+<body>
+
+<div class="viewer-header">
+  <h1>Lifelong Quest</h1>
+  <p class="meta">Edition 3 &middot; 2026</p>
+  <p>
+    <a href="../">&larr; back to zine-a-thon</a>
+  </p>
+</div>
+
+<section class="flipbook-section">
+  <div class="book-shell" id="book">
+    <div class="page left-page" id="left-page"><img id="zine-left" alt="Lifelong Quest page"></div>
+    <div class="page right-page" id="right-page"><img id="zine-right" alt="Lifelong Quest page"></div>
+  </div>
+  <div class="controls">
+    <button id="prev-page" type="button">&laquo; Previous</button>
+    <span class="page-info" id="page-info">Page 1</span>
+    <button id="next-page" type="button">Next &raquo;</button>
+  </div>
+</section>
+
+<script>
+  window.ZINE = {
+    title: "Lifelong Quest",
+    year: 2026,
+    pages: [
+      "pages/1.png", "pages/2.png", "pages/3.png", "pages/4.png",
+      "pages/5.png", "pages/6.png", "pages/7.png", "pages/8.png"
+    ]
+  };
+</script>
+<script src="../viewer.js" defer></script>
+
+</body>
+</html>
